@@ -1,25 +1,23 @@
 package com.beginner.demoApplication.controllers;
 
-import org.springframework.web.bind.annotation.RestController;
-
-import com.beginner.demoApplication.services.EmployeeService;
 import com.beginner.demoApplication.dto.EmployeeDTO;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.beginner.demoApplication.services.EmployeeService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
 
-
-@RestController 
+@RestController
 public class Employeecontroller {
-@Autowired 
-EmployeeService employeeService;
 
-// Second endpoint
-@GetMapping("/employee/{id}")
-public ResponseEntity<EmployeeDTO> getEmployee(@PathVariable Integer id) {
+    private final EmployeeService employeeService;
 
-    return ResponseEntity.ok(employeeService.getEmployee(id));
-}
+    public Employeecontroller(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
 
+    @GetMapping("/employee/{id}")
+    public ResponseEntity<EmployeeDTO> getEmployee(@PathVariable Integer id) {
+        return ResponseEntity.ok(employeeService.getEmployee(id));
+    }
 }
