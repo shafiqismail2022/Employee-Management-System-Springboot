@@ -1,8 +1,7 @@
 package com.beginner.demoApplication.repositories;
-
+// EmployeeRepository.java
+import com.beginner.demoApplication.entities.Employee;
 import org.springframework.stereotype.Repository;
-
-import entities.Employee;
 
 @Repository     
 public class EmployeeRepository {

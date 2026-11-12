@@ -1,6 +1,7 @@
-package dto;
+// EmployeeDTO.java
+package com.beginner.demoApplication.dto;
 
-import entities.Employee;
+import com.beginner.demoApplication.entities.Employee;
 
 public class EmployeeDTO {
     String name;

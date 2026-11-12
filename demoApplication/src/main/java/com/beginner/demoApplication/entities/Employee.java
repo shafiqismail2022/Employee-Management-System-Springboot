@@ -1,4 +1,5 @@
-package entities;
+// Employee.java
+package com.beginner.demoApplication.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

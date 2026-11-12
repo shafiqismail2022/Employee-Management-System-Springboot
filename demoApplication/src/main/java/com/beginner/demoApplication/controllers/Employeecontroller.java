@@ -3,7 +3,7 @@ package com.beginner.demoApplication.controllers;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.beginner.demoApplication.services.EmployeeService;
-
+import com.beginner.demoApplication.dto.EmployeeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,11 +17,9 @@ EmployeeService employeeService;
 
 // Second endpoint
 @GetMapping("/employee/{id}")
-public ResponseEntity<String> getEmployee(@PathVariable Integer id) {
+public ResponseEntity<EmployeeDTO> getEmployee(@PathVariable Integer id) {
 
-    
-    String employee=employeeService.getEmployee(id);
-    return ResponseEntity.ok(employee);
+    return ResponseEntity.ok(employeeService.getEmployee(id));
 }
 
 }
